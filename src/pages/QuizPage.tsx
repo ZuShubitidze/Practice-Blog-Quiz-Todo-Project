@@ -1,13 +1,7 @@
 import GeographyQuiz from "@/components/quiz/GeographyQuiz";
 import HistoryQuiz from "@/components/quiz/HistoryQuiz";
+import SelectCategoryForm from "@/components/SelectCategoryForm";
 import { Button } from "@/components/ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { auth } from "@/firebaseConfig";
 import { useState } from "react";
 
@@ -35,20 +29,7 @@ const QuizPage = () => {
           </Button>
           {quizStartState && (
             // Select Category Form
-            <form
-              className="flex flex-col gap-10"
-              onSubmit={(e) => e.preventDefault()}
-            >
-              <Select onValueChange={handleCategoryChange}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select Category" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="geography">Geography</SelectItem>
-                  <SelectItem value="history">History</SelectItem>
-                </SelectContent>
-              </Select>
-            </form>
+            <SelectCategoryForm handleCategoryChange={handleCategoryChange} />
           )}
           {/* Geography Quiz */}
           {selectedCategory === "geography" && <GeographyQuiz />}

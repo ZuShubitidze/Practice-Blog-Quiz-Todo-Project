@@ -16,7 +16,7 @@ const Navbar = () => {
   return (
     <div className="flex flex-col gap-20 p-6 md:p-10">
       <nav>
-        <div className="flex flex-col w-1/2 md:w-full md:flex-row items-center justify-between text-3xl font-bold">
+        <div className="flex flex-col w-full lg:flex-row items-center justify-between text-2xl lg:text-3xl font-bold">
           {/* Nav Links */}
           <div className="flex gap-20">
             <Link
@@ -45,9 +45,9 @@ const Navbar = () => {
             </Link>
           </div>
           {/* Login and ModeToggle*/}
-          <div className="flex items-center gap-10">
+          <div className="flex items-center gap-20">
+            {/* User is logged in */}
             {user ? (
-              // User is logged in
               <Link
                 to="/profile"
                 className="hover:bg-white hover:text-black p-3 rounded-2xl transition-all duration-500"
